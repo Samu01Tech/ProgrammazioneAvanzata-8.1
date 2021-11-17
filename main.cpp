@@ -2,12 +2,17 @@
 #include <set>
 using namespace std;
 
+void print(set<int> s){
+    for (auto& x : s) cout << x << " " << endl;
+}
+
 int main() {
     set<int> si;
     si.insert(5);
     si.insert(2);
     si.insert(9);
     
+    //iteratori
     set<int>::iterator iter;
     for(iter = si.begin(); iter != si.end(); ++iter){
         cout << *iter << endl;
@@ -28,5 +33,13 @@ int main() {
     }
 
     cout << "--------" << endl;
+
+    //erase()
+    iter = si.find(5);
+    if(iter != si.end()){
+        //chiamo erase solo se trovo il valore
+        si.erase(iter);
+    }
+    print(si);
 
 } 
