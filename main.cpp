@@ -1,9 +1,15 @@
 #include <iostream>
 #include <set>
+#include <unordered_set>
 using namespace std;
 
 void print(set<int> s){
     for (auto& x : s) cout << x << " " << endl;
+    cout << "--------" << endl;
+}
+void print(unordered_set<float> s){
+    for (auto& x : s) cout << x << " " << endl;
+    cout << "--------" << endl;
 }
 
 int main() {
@@ -41,5 +47,13 @@ int main() {
         si.erase(iter);
     }
     print(si);
+
+    //unordered sets
+    unordered_set<float> usf;
+    usf.insert(22.5);
+    usf.insert(1.9);
+    usf.insert(9.99);
+    usf.insert(22.5);
+    print(usf);
 
 } 
